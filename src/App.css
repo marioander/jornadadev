@@ -1,0 +1,33 @@
+html{
+  /* Para ter o efeito de "rolagem automática" para o próximo vídeo */
+  scroll-snap-type: y mandatory;
+}
+
+.App{
+  background-color: black;
+  height: 100vh;
+  display: grid;
+  place-items: center;  
+}
+
+.app__videos{
+  height: 100vh;
+  max-height: 700px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  position: relative;
+}
+
+/* Esconde a scrollbar no Chrome, Safari e Opera */
+.app__videos::-webkit-scrollbar{
+  display: none
+}
+
+/* Esconde a scrollbar no Internet Explorer, Edge e Firefox */
+.app__videos{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

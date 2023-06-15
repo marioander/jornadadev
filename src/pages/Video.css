@@ -1,0 +1,16 @@
+.video{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    /* Para ter o efeito de "rolagem automática" para o próximo vídeo */
+    scroll-snap-align: start;
+    
+}
+
+.video__player{
+    height: 100%;
+    width: 100%;
+    /* para preencher todo o container */
+    object-fit: fill;
+}

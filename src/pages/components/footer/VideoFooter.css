@@ -1,0 +1,58 @@
+
+.VideoFooter {
+    position: relative;
+    bottom: 25%;
+}
+
+.VideoFooter__text{
+    color: white;
+    margin-left: 30px;
+}
+
+.VideoFooter__text, h3 {
+    padding-bottom: 20px;
+}
+
+.VideoFooter__text, p {
+    padding-bottom: 20px;
+}
+
+.VideoFooter__music {
+    display: flex;
+}
+
+.VideoFooterMusic__title {
+    width: 80%;
+    overflow-x: hidden;
+}
+
+.VideoFooterMusic__title p{
+    animation: moverTitulo 5s infinite linear; /* para criar a animação de movimentação do título da música (parte 2/2) */
+}
+
+.VideoFooter__record {
+    animation: girarVinil 3s infinite linear; /* para criar a animação do vinil girando (parte 2/2) */
+    position: absolute; /* para deixar ele livre no posicionamento, sem depender de outro componente */
+    bottom: 25px;
+    right: 20px;
+    height: 50px;
+    filter: invert(1); /* para inverter a cor do preto para o branco */
+}
+
+@keyframes girarVinil { /* para criar a animação do vinil girando (parte 1/2) */
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moverTitulo { /* para criar a animação de movimentação do título da música (parte 1/2) */
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}

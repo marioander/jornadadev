@@ -2,16 +2,16 @@ import React from "react";
 import "./VideoFooter.css";
 import NotaMusical from '@mui/icons-material/MusicNote'; /* para importar o ícone do site */
 
-function VideoFooter() {
+function VideoFooter({conta, legenda, musica}) {
   return (
     <div className="VideoFooter">
       <div className="VideoFooter__text">
-        <h3>@MarioAnder</h3>
-        <p>Acrobacia Felina!</p>
+        <h3>@{conta}</h3>
+        <p>{legenda}</p>
         <div className="VideoFooter__music">
           <p> <NotaMusical className="VideoFooter__icon" /> </p>
           <div className="VideoFooterMusic__title">
-              <p>Interstellar (Main Theme) - Piano Version</p>
+              <p>{musica}</p>
           </div>
         </div>
       </div>

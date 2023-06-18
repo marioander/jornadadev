@@ -1,28 +1,39 @@
-import './App.css';
-import Video from './pages/Video';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Video from "./pages/Video";
+import db from "./config/firebase";
+import { collection, getDocs } from "firebase/firestore/lite";
 
 function App() {
+  const [video, setVideos] = useState([]);
+
+  async function getVideos() {
+    const videosCollection = collection(db, "videos");
+    const videosSnapshot = await getDocs(videosCollection);
+    const videosList = videosSnapshot.docs.map((doc) => doc.data());
+    setVideos(videosList);
+  }
+
+  useEffect(() => {
+    getVideos();
+  }, []);
+
   return (
     <div className="App">
-      <div className='app__videos'>
-        <Video 
-          curtidas={522}
-          mensagens={28}
-          compartilhamentos={134}
-          conta="MarioAnder"
-          legenda="sai sai sai que é tua Taffareeeel"
-          musica="Interstellar - Main Theme"
-          url="https://poqlymuephttfsljdabn.supabase.co/storage/v1/object/public/jornadadev/brecker2.mp4?t=2023-05-22T19%3A37%3A45.885Z"
-        />
-        <Video 
-          curtidas={315}
-          mensagens={12}
-          compartilhamentos={98}
-          conta="oGato"
-          legenda="a animação dele é contagiante kk"
-          musica="Clap Your Hands (accelerated).mp3"
-          url="https://poqlymuephttfsljdabn.supabase.co/storage/v1/object/public/jornadadev/bird.mp4?t=2023-05-22T19%3A40%3A47.052Z"
-        />
+      <div className="app__videos">
+        {video.map((item) => {
+          return (
+            <Video
+              curtidas={item.curtidas}
+              mensagens={item.mensagens}
+              compartilhamentos={item.compartilhamentos}
+              conta={item.conta}
+              legenda={item.legenda}
+              musica={item.musica}
+              url={item.url}
+            />
+          );
+        })}
       </div>
     </div>
   );

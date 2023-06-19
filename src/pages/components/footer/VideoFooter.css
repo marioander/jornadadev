@@ -22,7 +22,7 @@
 }
 
 .VideoFooterMusic__title {
-    width: 80%;
+    width: 79%;
     overflow-x: hidden;
 }
 
@@ -54,5 +54,14 @@
     }
     100%{
         transform: translateX(-100%);
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .VideoFooter {
+        bottom: 22%;
+    }
+    .VideoFooterMusic__title {
+        width: 78%;
     }
 }

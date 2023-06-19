@@ -1,7 +1,7 @@
 
 .VideoFooter {
     position: relative;
-    bottom: 25%;
+    bottom: 30%;
 }
 
 .VideoFooter__text{
@@ -59,7 +59,7 @@
 
 @media only screen and (max-width: 440px) {
     .VideoFooter {
-        bottom: 22%;
+        bottom: 30%;
     }
     .VideoFooterMusic__title {
         width: 78%;
